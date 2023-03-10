@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% block title %}ADD{% endblock title %}
+{% block content%} 
+<form method="POST">
+     {% csrf_token %}
+     <div class="my-form">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="title" class="form-control" id="title" name="title" Required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea input type="description" class="form-control" id="description" name='description' style="width:800px" Required>
+    </textarea>
+    </div>
+  
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{% url 'home' %}" class="btn btn-primary">Cancel</a>
+  </div>
+  </form>
+
+{% endblock content%}

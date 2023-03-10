@@ -1,0 +1,24 @@
+{% extends 'core/base.html'%}
+{% block title%}Login{% endblock title%}
+{% block content%}
+<h1 style="text-align:center;">Login</h1>
+<hr>
+{% for msg in messages %}
+<div class="alert alert-success" role="alert">
+  {{msg}}
+</div>
+{% endfor %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="my-form">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" Required >
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" Required  >
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock content %}
